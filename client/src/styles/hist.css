@@ -1,0 +1,29 @@
+html, body {margin:0;padding:0px;height:100%;}
+
+:global(#hist) {
+  position: absolute;
+  min-height: 300px;
+  width: 75%;
+  min-width: 500px;
+}
+
+:local(.outerContainer) {
+  display: grid;
+  position:absolute;
+  height:auto;
+  bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  margin: 20px;
+  background-color: silver;
+}
+
+:local(.gamesContainer) {
+  position: absolute;
+  bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  background-color: grey;
+}

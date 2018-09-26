@@ -1,0 +1,41 @@
+:local(.gameContainer) {
+  display: grid;
+  grid-template-columns: [c0] 20% [c01] 20% [c12] 20% [c23] 20% [c34] 20% [c4];
+  grid-template-rows: [r0] 1em [r01] auto [r12];
+  grid-template-areas: 
+  "header header header header header"
+  "champ summoners kda items stats";
+  justify-items: center;
+  position: relative;
+  min-height: 100px;
+  /* width: 90%; */
+  top: 0;
+  left: 0;
+  right: 0;
+  margin:0;
+  border: black solid 3px;
+}
+
+:local(.title) {
+  grid-area: header;
+}
+
+:local(.champ) {
+  grid-area: champ;
+}
+
+:local(.summoners) {
+  grid-area: summoners;
+}
+
+:local(.kda) {
+  grid-area: kda;
+}
+
+:local(.items) {
+  grid-area: items;
+}
+
+:local(.stats) {
+  grid-area: stats;
+}
