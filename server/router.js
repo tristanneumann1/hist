@@ -1,9 +1,9 @@
 const router = require('express').Router();
 // const seedController = require('./controllers/seedController.js');
-const summonerController = require('./controllers/summonerController.js');
+const controller = require('./controllers/controller.js');
 
 router.route('/summoner')
-  .get(summonerController.getSummoner);
+  .get(controller.getGames);
 
 module.exports = router;
 
