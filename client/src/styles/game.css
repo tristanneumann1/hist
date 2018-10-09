@@ -6,13 +6,8 @@
   "header header header header header"
   "champ summoners kda items stats";
   justify-items: center;
-  position: relative;
   min-height: 100px;
   /* width: 90%; */
-  top: 0;
-  left: 0;
-  right: 0;
-  margin:0;
   border: black solid 3px;
 }
 

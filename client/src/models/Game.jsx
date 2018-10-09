@@ -8,15 +8,32 @@ import Items from './gameModels/Items.jsx';
 import Stats from './gameModels/Stats.jsx';
 
 class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      game: props.game,
+      player: props.player,
+      participantId: props.participantId,
+      teamId: props.teamId,
+    };
+  }
+
   render() {
+    const {
+      game,
+      participantId,
+      player,
+      teamId,
+    } = this.state;
+    console.log('props deconstruct', game, participantId, player, teamId);
     return (
       <div className={styles.gameContainer}>
-        <Title />
-        <Champ />
-        <Summoners />
-        <KDA />
-        <Items />
-        <Stats />
+        <Title gameMode={game.gameMode} win={game.teams[(teamId / 100) - 1]} />
+        <Champ champ={game.participants[participantId - 1].championId} />
+        <Summoners participant={game.participants[participantId - 1]} />
+        <KDA participant={game.participants[participantId - 1]} />
+        <Items participant={game.participants[participantId - 1]} />
+        <Stats participant={game.participants[participantId - 1]} />
       </div>
     );
   }
