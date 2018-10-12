@@ -1,14 +1,8 @@
 import React from 'react';
 import styles from '../../styles/game.css';
 
-class Title extends React.Component {
-  render() {
-    return (
-      <span className={styles.title}>
-        Normal: VICTORY
-      </span>
-    );
-  }
-}
+const Title = (props) => <span className={styles.title}>
+  {props.gameMode}: {props.win}
+</span>
 
 export default Title;

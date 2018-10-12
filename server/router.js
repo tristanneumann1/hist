@@ -5,6 +5,9 @@ const controller = require('./controllers/controller.js');
 router.route('/summoner')
   .get(controller.getGames);
 
+router.route('/championImg')
+  .get(controller.getChampionImg);
+
 module.exports = router;
 
 // .post(controller.postRunes);

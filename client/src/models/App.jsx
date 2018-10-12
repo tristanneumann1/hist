@@ -6,9 +6,7 @@ import Game from './Game.jsx';
 
 function findParticipantAndTeam(game, player) {
   for (let i = 0; i < game.participantIdentities.length; i++) {
-    console.log(game.participantIdentities[i].player.summonerName.toLowerCase(), 'IS EQUAL TO: ', player);
     if (game.participantIdentities[i].player.summonerName.toLowerCase() === player) {
-      console.log('found');
       return {
         participantId: game.participantIdentities[i].participantId,
         teamId: game.participants[i].teamId,
@@ -38,7 +36,6 @@ class App extends React.Component {
   getGames(params) { // region = 'NA1',username,endIndex = 10,beginIndex = 0,champion,
     axios.get(`/api/summoner${params}`)
       .then((gamesData) => {
-        console.log('games got: ', gamesData);
         this.setState({ games: gamesData.data });
       })
       .catch(err => console.error(err));

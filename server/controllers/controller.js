@@ -1,6 +1,6 @@
-const {
-  matchDataByUsername,
-} = require('../../Riot/helpers.js');
+const { matchDataByUsername } = require('../../Riot/helpers.js');
+
+const Champions = require('../../db/models/Champions.js');
 
 module.exports = {
   getGames(req, res) {
@@ -21,4 +21,13 @@ module.exports = {
       }
     }, username, region, params);
   },
+  getChampionImg(req, res) {
+    Champions.findOne({ key: req.query.key }, 'image', (err, image) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(image.image);
+      }
+    })
+  }
 };
