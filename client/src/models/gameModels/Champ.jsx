@@ -25,7 +25,7 @@ class Champ extends React.Component {
   render() {
     return (
       <div className={styles.champ}>
-        <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${this.state.image}`} alt="champion square" height="42" width="42" />
+        <img src={`./images/champions/${this.state.image}`} alt="champion square" height="42" width="42" />
       </div>
     );
   }
