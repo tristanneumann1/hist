@@ -9,7 +9,7 @@ Runes.find({}, 'icon', (err, runesData) => {
       // console.log('image?: ', runeData);
       const nameArr = runeData.icon.split('/');
       const name = nameArr[nameArr.length - 1];
-      const file = fs.createWriteStream(`./images/runes/${name}`);
+      const file = fs.createWriteStream(`./client/dist/images/runes/${name}`);
       axios.get(`https://ddragon.leagueoflegends.com/cdn/img/${runeData.icon}`, { responseType: 'stream' })
         .then((pic) => {
           pic.data.pipe(file);

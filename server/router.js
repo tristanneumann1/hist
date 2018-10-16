@@ -15,7 +15,7 @@ router.route('/summsImg')
   .get(controller.getSummsImg);
 
 router.route('/seeder')
-  .post(seedController.postSumms);
+  .post(seedController.postRunes);
 
 
 module.exports = router;
