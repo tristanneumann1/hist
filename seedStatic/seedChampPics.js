@@ -1,6 +1,7 @@
 const fs = require('fs');
 const axios = require('axios');
 const Champs = require('../db/models/Champions');
+const { version } = require('../Riot/config.js');
 
 Champs.find({}, 'image', (err, champsData) => {
   if (err) { console.error(err); } else {
@@ -8,7 +9,7 @@ Champs.find({}, 'image', (err, champsData) => {
     champsData.forEach((champData) => {
       console.log('image?: ', champData.image.full);
       const file = fs.createWriteStream(`./images/champions/${champData.image.full}`);
-      axios.get(`http://ddragon.leagueoflegends.com/cdn/8.18.1/img/champion/${champData.image.full}`, { responseType: 'stream' })
+      axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champData.image.full}`, { responseType: 'stream' })
         .then((pic) => {
           pic.data.pipe(file);
 

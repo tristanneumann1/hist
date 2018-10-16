@@ -1,6 +1,8 @@
 const { matchDataByUsername } = require('../../Riot/helpers.js');
 
 const Champions = require('../../db/models/Champions.js');
+const Runes = require('../../db/models/Runes.js');
+const Summs = require('../../db/models/Summoners.js');
 
 module.exports = {
   getGames(req, res) {
@@ -28,6 +30,29 @@ module.exports = {
       } else {
         res.status(200).send(image.image);
       }
-    })
-  }
+    });
+  },
+  getRuneImg(req, res) {
+    Runes.findOne({ id: req.query.key }, 'icon', (err, icon) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        console.log('icon: ', icon);
+        const nameArr = icon.icon.split('/');
+        const name = nameArr[nameArr.length - 1];
+        res.status(200).send(name);
+      }
+    });
+  },
+  getSummsImg(req, res) {
+    Summs.findOne({ key: req.query.key }, 'image', (err, image) => {
+      if (err) {
+        res.status(500).send(err);
+      } else if (image && image.image && image.image.full) {
+        res.status(200).send(image.image.full);
+      } else {
+        res.status(400).send('image not found');
+      }
+    });
+  },
 };

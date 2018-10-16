@@ -26,9 +26,9 @@ class Game extends React.Component {
       teamId,
     } = this.state;
     const summs = [game.participants[participantId - 1].spell1Id, game.participants[participantId - 1].spell2Id];
-    const keyStone =  game.participants[participantId - 1].perk0;
-    const subStone = game.participants[participantId - 1].perkSubStyle;
-    console.log('props deconstruct', game, participantId, player, teamId);
+    const keyStone = game.participants[participantId - 1].stats.perk0;
+    const subStone = game.participants[participantId - 1].stats.perkSubStyle;
+    console.log('props deconstruct', game, participantId, player, teamId, keyStone, subStone);
     return (
       <div className={styles.gameContainer}>
         <Title gameMode={game.gameMode} win={game.teams[(teamId / 100) - 1].win} />

@@ -1,7 +1,8 @@
 const axios = require('axios');
+const { version } = require('../Riot/config.js');
 
 const seedItems = (ItemModel, cb) => {
-  axios.get('http://ddragon.leagueoflegends.com/cdn/8.18.1/data/en_US/item.json').then((res) => {
+  axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`).then((res) => {
     const items = res.data.data;
     const itemModels = [];
     for(const item in items) {

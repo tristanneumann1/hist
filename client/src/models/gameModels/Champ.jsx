@@ -19,7 +19,7 @@ class Champ extends React.Component {
         .catch((err) => {
           console.error(err);
         });
-    }    
+    }
   }
 
   render() {
