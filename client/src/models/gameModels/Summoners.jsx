@@ -55,10 +55,11 @@ class Summoners extends React.Component {
   render() {
     return (
       <span className={styles.summoners}>
-        <img src={`./images/runes/${this.state.keyStoneIcon}`} alt="keyStone Icon" height="42" width="42" />
-        <img src={`./images/runes/${this.state.subStoneIcon}`} alt="subStone Icon" height="42" width="42" />
-        <img src={`./images/summoners/${this.state.summs1Icon}`} alt="summ1 Icon" height="42" width="42" />
-        <img src={`./images/summoners/${this.state.summs2Icon}`} alt="summ2 Icon" height="42" width="42" />
+        <img src={`./images/runes/${this.state.keyStoneIcon}`} alt="keyStone Icon" height="25" width="25" />
+        <img src={`./images/runes/${this.state.subStoneIcon}`} alt="subStone Icon" height="25" width="25" />
+        <br />
+        <img src={`./images/summoners/${this.state.summs1Icon}`} alt="summ1 Icon" height="25" width="25" />
+        <img src={`./images/summoners/${this.state.summs2Icon}`} alt="summ2 Icon" height="25" width="25" />
       </span>
     );
   }
