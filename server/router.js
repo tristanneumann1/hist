@@ -14,12 +14,12 @@ router.route('/runeImg')
 router.route('/summsImg')
   .get(controller.getSummsImg);
 
-router.route('/seeder')
+router.route('/runeSeeder')
   .post(seedController.postRunes);
 
+router.route('/champSeeder')
+  .post(seedController.postChamps);
 
 module.exports = router;
 
-// .post(controller.postRunes);
 // .post(controller.postItems);
-// .post(controller.postChamps);

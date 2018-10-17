@@ -1,6 +1,6 @@
 :local(.gameContainer) {
   display: grid;
-  grid-template-columns: [c0] 20% [c01] 20% [c12] 20% [c23] 20% [c34] 20% [c4];
+  grid-template-columns: [c0] 8% [c01] 10% [c12] 12% [c23] 20% [c34] 50% [c4];
   grid-template-rows: [r0] 1em [r01] auto [r12];
   grid-template-areas: 
   "header header header header header"

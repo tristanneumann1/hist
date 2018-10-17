@@ -1,34 +1,22 @@
 import React from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
+
 import styles from '../../styles/game.css';
 
-class Champ extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      image: '',
-    };
-  }
+import { version } from '../../../../Riot/config';
+import champions from '../../../../Riot/champions.json';
 
-  componentDidMount() {
-    if (this.props.champ && !this.state.image.length) {
-      axios.get(`api/championImg?key=${this.props.champ}`)
-        .then((imgData) => {  
-          this.setState({ image: imgData.data.full });
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  }
+function Champ(props) {
+  const { champ } = props;
+  return (
+    <div className={styles.champ}>
+      <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champions[champ]}`} alt="champion square" height="42" width="42" />
+    </div>
+  );
+}
 
-  render() {
-    return (
-      <div className={styles.champ}>
-        <img src={`./images/champions/${this.state.image}`} alt="champion square" height="42" width="42" />
-      </div>
-    );
-  }
+Champ.propTypes = {
+  champ: PropTypes.number.isRequired,
 }
 
 export default Champ;

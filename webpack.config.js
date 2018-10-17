@@ -14,6 +14,9 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.json$/, loader: 'json'
+      },
+      {
         test: /\.jsx?/,
         include: SRC_DIR,
         loader: 'babel-loader',
