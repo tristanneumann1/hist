@@ -1,18 +1,42 @@
 :local(.gameContainer) {
   display: grid;
   grid-template-columns: [c0] 8% [c01] 10% [c12] 12% [c23] 20% [c34] 50% [c4];
-  grid-template-rows: [r0] 1em [r01] auto [r12];
+  grid-template-rows: [r0] 2em [r01] auto [r12];
   grid-template-areas: 
   "header header header header header"
   "champ summoners kda items stats";
   justify-items: center;
   min-height: 50px;
-  /* width: 90%; */
+  min-width: 600px;
   border: black solid 3px;
+  border-radius: 50px;
+  background: rgba(75,82,232,1);
+  background: -moz-linear-gradient(-45deg, rgba(75,82,232,1) 0%, rgba(48,173,194,1) 47%, rgba(41,198,184,1) 60%, rgba(32,227,172,1) 75%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(75,82,232,1)), color-stop(47%, rgba(48,173,194,1)), color-stop(60%, rgba(41,198,184,1)), color-stop(75%, rgba(32,227,172,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(75,82,232,1) 0%, rgba(48,173,194,1) 47%, rgba(41,198,184,1) 60%, rgba(32,227,172,1) 75%);
+  background: -o-linear-gradient(-45deg, rgba(75,82,232,1) 0%, rgba(48,173,194,1) 47%, rgba(41,198,184,1) 60%, rgba(32,227,172,1) 75%);
+  background: -ms-linear-gradient(-45deg, rgba(75,82,232,1) 0%, rgba(48,173,194,1) 47%, rgba(41,198,184,1) 60%, rgba(32,227,172,1) 75%);
+  background: linear-gradient(135deg, rgba(75,82,232,1) 0%, rgba(48,173,194,1) 47%, rgba(41,198,184,1) 60%, rgba(32,227,172,1) 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b52e8', endColorstr='#20e3ac', GradientType=1 );
 }
 
 :local(.title) {
   grid-area: header;
+  font-size: 20px;
+  margin: 0.2em;
+}
+
+:local(.titleWin) {
+  padding: 0px 20px;
+  border-radius: 10px;
+}
+
+:local(.titleWin1) {
+  background-color: lightgreen;
+}
+
+:local(.titleWin0) {
+  background-color: red;
 }
 
 :local(.champ) {

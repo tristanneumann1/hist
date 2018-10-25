@@ -17,6 +17,6 @@ function Champ(props) {
 
 Champ.propTypes = {
   champ: PropTypes.number.isRequired,
-}
+};
 
 export default Champ;

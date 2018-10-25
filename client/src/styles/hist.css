@@ -1,17 +1,16 @@
 html, body {margin:0;padding:0px} /*;height:100%;max-height: 100%} */
 
-/* :global(#hist) {
-} */
+body {
+  background-color: #131350;
+}
 
 :local(.outerContainer) {
   display: grid;
   z-index: 1;
   height:100%;
   margin: 20px;
-  background-color: silver;
 }
 
 :local(.gamesContainer) {
   font-family: 'Lato', sans-serif;
-  background-color: grey;
 }
