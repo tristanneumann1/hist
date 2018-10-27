@@ -1,18 +1,21 @@
 const axios = require('axios');
+const fs = require('fs');
 const { version } = require('../Riot/config.js');
 
-const seedItems = (ItemModel, cb) => {
+const seedRunes = (RunesModel, cb) => {
   axios.get(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/runesReforged.json`).then((res) => {
-    const items = res.data;
-    const itemModels = [];
-    items.forEach((item) => {
-      itemModels.push(new ItemModel(item));
-      item.slots.forEach((slot) => {
-        slot.runes.forEach(rune => itemModels.push(new ItemModel(rune)));
+    const runesData = res.data;
+    const runesModels = [];
+    const runes = {};
+    runesData.forEach((runeFamily) => {
+      runesModels.push(new RunesModel(runeFamily));
+      console.log('runeFamily', runeFamily);
+      runeFamily.slots.forEach((slot) => {
+        slot.runes.forEach(runeSlot => runesModels.push(new RunesModel(runeSlot)));
       });
     });
-    ItemModel.insertMany(itemModels, cb);
+    RunesModel.insertMany(runesModels, cb);
   }).catch(err => console.error(err));
 };
 
-module.exports = seedItems;
+module.exports = seedRunes;

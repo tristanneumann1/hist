@@ -1,6 +1,6 @@
 const axios = require('axios');
-const { version } = require('../Riot/config.js');
 const fs = require('fs');
+const { version } = require('../Riot/config.js');
 
 const seedChamps = (ChampModel, cb) => {
   axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`).then((res) => {

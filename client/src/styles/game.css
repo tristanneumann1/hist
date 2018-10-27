@@ -1,6 +1,6 @@
 :local(.gameContainer) {
   display: grid;
-  grid-template-columns: [c0] 8% [c01] 10% [c12] 12% [c23] 20% [c34] 50% [c4];
+  grid-template-columns: [c0] 10% [c01] 10% [c12] 12% [c23] 20% [c34] 48% [c4];
   grid-template-rows: [r0] 2em [r01] auto [r12];
   grid-template-areas: 
   "header header header header header"
@@ -20,6 +20,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b52e8', endColorstr='#20e3ac', GradientType=1 );
 }
 
+/********************* TITLE *********************/
 :local(.title) {
   grid-area: header;
   font-size: 20px;
@@ -39,16 +40,52 @@
   background-color: red;
 }
 
+/********************* CHAMP *********************/
 :local(.champ) {
   grid-area: champ;
+}
+
+:local(.champPic) {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
 }
 
 :local(.summoners) {
   grid-area: summoners;
 }
 
+/********************* KDA *********************/
+
 :local(.kda) {
   grid-area: kda;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:local(.kdaChildren) {
+  display: flex;
+  flex-direction: row;
+}
+
+:local(.icon) {
+  width: 30px;
+  height: 30px;
+}
+
+:local(.kdaStat) {
+  width: 30px;
+  text-align: center;
+  padding: 3.5px 0px;
+  font-weight: bold;
+  font-size: 1.25em; 
+}
+
+:local(.kdaAverage) {
+  text-align: center;
+  padding: 6px 0px;
+  font-style: italic;
 }
 
 :local(.items) {

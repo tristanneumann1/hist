@@ -10,7 +10,7 @@ function Champ(props) {
   const { champ } = props;
   return (
     <div className={styles.champ}>
-      <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champions[champ]}`} alt="champion square" height="42" width="42" />
+      <img src={`http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champions[champ]}`} alt="champion square" className={styles.champPic} />
     </div>
   );
 }

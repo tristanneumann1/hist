@@ -34,7 +34,6 @@ class Game extends React.Component {
     const {
       game,
       participantId,
-      player,
       teamId,
     } = this.state;
     const summs = [game.participants[participantId - 1].spell1Id, game.participants[participantId - 1].spell2Id];
