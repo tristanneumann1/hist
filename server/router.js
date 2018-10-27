@@ -20,6 +20,9 @@ router.route('/runeSeeder')
 router.route('/champSeeder')
   .post(seedController.postChamps);
 
+router.route('/summsSeeder')
+  .post(seedController.postSumms);
+
 module.exports = router;
 
 // .post(controller.postItems);

@@ -9,12 +9,16 @@ const seedRunes = (RunesModel, cb) => {
     const runes = {};
     runesData.forEach((runeFamily) => {
       runesModels.push(new RunesModel(runeFamily));
-      console.log('runeFamily', runeFamily);
+      runes[runeFamily.id] = { icon: runeFamily.icon };
       runeFamily.slots.forEach((slot) => {
-        slot.runes.forEach(runeSlot => runesModels.push(new RunesModel(runeSlot)));
+        slot.runes.forEach((runeSlot) => {
+          runesModels.push(new RunesModel(runeSlot));
+          runes[runeSlot.id] = { icon: runeSlot.icon };
+        });
       });
     });
     RunesModel.insertMany(runesModels, cb);
+    fs.writeFile('./Riot/runes.json', JSON.stringify(runes), 'utf8', () => { console.log('files written'); });
   }).catch(err => console.error(err));
 };
 
