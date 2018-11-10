@@ -6,9 +6,9 @@ const KDA = (props) => {
   return (
     <div className={styles.kda}>
       <div className={styles.kdaChildren}>
-        <img src="./images/icons/killIcon.png" alt="killIcon" className={styles.icon} />
-        <img src="./images/icons/deathIcon.png" alt="deathIcon" className={styles.icon} />
-        <img src="./images/icons/assistIcon.png" alt="AssistIcon" className={styles.icon} />
+        <img src="../images/icons/killIcon.png" alt="killIcon" className={styles.icon} />
+        <img src="../images/icons/deathIcon.png" alt="deathIcon" className={styles.icon} />
+        <img src="../images/icons/assistIcon.png" alt="AssistIcon" className={styles.icon} />
       </div>
       <div className={styles.kdaChildren}>
         <div className={styles.kdaStat}>{`${kills}`}</div>

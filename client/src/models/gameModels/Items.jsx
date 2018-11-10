@@ -4,7 +4,7 @@ import { version } from '../../../../Riot/config.js';
 
 function itemDisplay(items) {
   return items.map((item, i) => (
-    <img height="30" width="30" key={`item${i}`} src={item ? `http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item}.png` : './images/0000.png'} alt={`item${i}`} />
+    <img height="30" width="30" key={`item${i}`} src={item ? `http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item}.png` : '../images/0000.png'} alt={`item${i}`} />
   ));
 }
 

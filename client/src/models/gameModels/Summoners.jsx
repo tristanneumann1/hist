@@ -5,11 +5,10 @@ import runes from '../../../../Riot/runes.json';
 import summoners from '../../../../Riot/summoners.json';
 import { version } from '../../../../Riot/config';
 
-const missingRune = './images/0000.png';
+const missingRune = '../images/0000.png';
 
 const Summoners = (props) => {
   const { keyStone, subStone, summs } = props;
-  console.log(summs, ': summs');
   return (
     <span className={styles.summoners}>
       <img src={summoners[summs[0]] ? `http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${summoners[summs[0]].image.full}` : missingRune} alt="summ1 Icon" height="25" width="25" />
@@ -23,8 +22,8 @@ const Summoners = (props) => {
 
 
 Summoners.propTypes = {
-  keyStone: PropTypes.string.isRequired,
-  subStone: PropTypes.string.isRequired,
+  keyStone: PropTypes.number.isRequired,
+  subStone: PropTypes.number.isRequired,
   summs: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
