@@ -2,14 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 var SRC_DIR = path.join(__dirname, './client/src');
 var DIST_DIR = path.join(__dirname, './client/dist');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
+  mode: 'none',
   entry: `${SRC_DIR}/index.js`,
   output: {
-    filename: 'bundle.js',
     path: DIST_DIR,
+    filename: 'bundle.js',
   },
   module: {
     rules: [

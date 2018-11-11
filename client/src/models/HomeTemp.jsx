@@ -1,5 +1,4 @@
 import React from 'react';
-import { Router } from 'react-router';
 import history from '../history.js';
 
 class HomeTemp extends React.Component{

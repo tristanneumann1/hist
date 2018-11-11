@@ -13,7 +13,6 @@ module.exports = {
       beginIndex = 0,
       champion,
     } = req.query;
-    console.log(req.query);
     const params = { endIndex, beginIndex };
     if (champion) {
       params.champion = champion;

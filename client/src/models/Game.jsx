@@ -13,7 +13,7 @@ function getKP(participants, kills, team) {
     teamKills[participant.teamId] += participant.stats.kills;
   });
   return teamKills[team] ? `${Math.floor(100 * kills / teamKills[team])}%` : '0%';
-}
+};
 
 function getDPM(participant, gameDuration) {
   return Math.floor(60 * participant.stats.totalDamageDealtToChampions / gameDuration);

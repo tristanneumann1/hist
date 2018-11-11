@@ -10,8 +10,11 @@ const app = express();
 app.use(helmet());
 app.use(parser.urlencoded({ extended: false }));
 app.use(morgan('[:date[clf]] :method :url :status :res[content-length] - :response-time ms'));
-app.use('/api', router);
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
+app.use('/api', router);
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 // app.use('/api/stats', router);
 
 module.exports = app;
