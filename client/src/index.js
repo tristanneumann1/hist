@@ -1,8 +1,7 @@
 import React from 'react';
 import reactDom from 'react-dom';
-// import { Router } from 'react-router'; //browserHistory
 import history from "./history.js";
-import { Router, Route } from 'react-router-dom'; //BrowserRouter, 
+import { Router, Route } from 'react-router-dom';
 
 import HomeTemp from './models/HomeTemp.jsx';
 import App from './models/App.jsx';

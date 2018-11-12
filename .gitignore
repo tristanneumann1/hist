@@ -1,3 +1,4 @@
 /node_modules
 /Riot/config.js
 /client/dist/bundle.js
+client/dist/bundle.js

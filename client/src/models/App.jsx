@@ -1,11 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import history from '../history.js';
 import styles from '../styles/hist.css';
 
 import Game from './Game.jsx';
-
-// this.props.params.username;
+import Search from './gameModels/Search.jsx';
 
 function findParticipantAndTeam(game, player) {
   for (let i = 0; i < game.participantIdentities.length; i++) {
@@ -42,22 +40,11 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  searchUsername(event) {
-    event.preventDefault();
-    const userName = event.target.elements[0].value;
-    const path = `/username/${userName}`
-    history.push(path);
-  }
-
   render() {
     const { player, games } = this.state;
-    console.log('rendering App with state: ', this.state);
     return (
       <div className={styles.outerContainer}>
-        <form onSubmit={this.searchUsername}>
-          <input type="text" placeholder="userName" />{' '}
-          <button type="submit">Go</button>
-        </form>
+        <Search />
         <div className={styles.gamesContainer}>
           {games.map((game) => {
             const { participantId, teamId } = findParticipantAndTeam(game, player);
