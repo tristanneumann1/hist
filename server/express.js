@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const parser = require('body-parser');
 const path = require('path');
 
-const router = require('./router.js');
+const router = require('./routes/router.js');
 const app = express();
 
 app.use(helmet());

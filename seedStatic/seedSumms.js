@@ -8,7 +8,6 @@ const seedSumms = (SummModel, cb) => {
     const summModels = [];
     const summonersObject = {};
     Object.keys(summs).forEach((sum) => {
-      console.log('sum: ', sum);
       summModels.push(summs[sum]);
       summonersObject[summs[sum].key] = { image: summs[sum].image };
     });

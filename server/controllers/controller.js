@@ -23,36 +23,4 @@ module.exports = {
       }
     }, username, region, params);
   },
-  getChampionImg(req, res) {
-    Champions.findOne({ key: req.query.key }, 'image', (err, image) => {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        res.status(200).send(image.image);
-      }
-    });
-  },
-  getRuneImg(req, res) {
-    Runes.findOne({ id: req.query.key }, 'icon', (err, icon) => {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        console.log('icon: ', icon);
-        const nameArr = icon.icon.split('/');
-        const name = nameArr[nameArr.length - 1];
-        res.status(200).send(name);
-      }
-    });
-  },
-  getSummsImg(req, res) {
-    Summs.findOne({ key: req.query.key }, 'image', (err, image) => {
-      if (err) {
-        res.status(500).send(err);
-      } else if (image && image.image && image.image.full) {
-        res.status(200).send(image.image.full);
-      } else {
-        res.status(400).send('image not found');
-      }
-    });
-  },
 };
