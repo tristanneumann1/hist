@@ -25464,6 +25464,10 @@ var _history = __webpack_require__(12);
 
 var _history2 = _interopRequireDefault(_history);
 
+var _search = __webpack_require__(104);
+
+var _search2 = _interopRequireDefault(_search);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25484,7 +25488,6 @@ var Search = function (_React$Component) {
   _createClass(Search, [{
     key: 'handleSubmit',
     value: function handleSubmit(event) {
-      // event.preventDefault();
       var userName = event.target.elements[0].value;
       var path = '/username/' + userName;
       _history2.default.push(path);
@@ -25495,12 +25498,12 @@ var Search = function (_React$Component) {
       return _react2.default.createElement(
         'form',
         { onSubmit: this.handleSubmit },
-        _react2.default.createElement('input', { type: 'text', placeholder: 'userName' }),
+        _react2.default.createElement('input', { type: 'text', placeholder: 'userName', className: _search2.default.input }),
         ' ',
         _react2.default.createElement(
           'button',
-          { type: 'submit' },
-          'Go'
+          { type: 'submit', className: _search2.default.GGButton },
+          'GG!'
         )
       );
     }
@@ -28528,6 +28531,47 @@ var Stats = function Stats(props) {
 };
 
 exports.default = Stats;
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(105);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"sourceMap":true,"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(89)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(88)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".client-src-styles-___search__GGButton___2CbU7 {\r\n    position: relative;\r\n    top: 3px;\r\n    left: 3px;\r\n    cursor: pointer;\r\n    border: 0;\r\n    height: 40px;\r\n    width: 100px;\r\n    background: rgb(2,0,36);\r\n    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);\r\n    color: #efefef;\r\n    font-weight: 900;\r\n    font-size: 20px;\r\n    -webkit-box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n    -moz-box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n    box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n}\r\n\r\n.client-src-styles-___search__GGButton___2CbU7:hover {\r\n    top: 0px;\r\n    left: 0px;\r\n    box-shadow: 5px 5px 7px 3px rgba(0,0,0,0.75);\r\n    transition: 0.5s;\r\n}\r\n\r\n.client-src-styles-___search__GGButton___2CbU7:active {\r\n    top: 3px;\r\n    left: 3px;\r\n    box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n    transition: 0.1s;\r\n}\r\n", ""]);
+
+// exports
+exports.locals = {
+	"GGButton": "client-src-styles-___search__GGButton___2CbU7"
+};
 
 /***/ })
 /******/ ]);

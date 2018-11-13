@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server",
-    "build": "webpack --config webpack.config.js --content-base ./client/dist --history-api-fallback -w"
+    "start": "node server && npm run build",
+    "build": "webpack --config webpack.config.js --content-base ./client/dist --history-api-fallback"
   },
   "repository": {
     "type": "git",
