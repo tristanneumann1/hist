@@ -1,5 +1,6 @@
 const axios = require('axios');
-const { APIKEY } = require('./config.js');
+// const { APIKEY } = require('./config.js');
+const APIKEY = process.env.APIKEY;
 
 function summoner(cb, username, region = 'NA1') {
   axios.get(`https://${region}.api.riotgames.com/lol/summoner/v3/summoners/by-name/${username}`, {
@@ -55,8 +56,6 @@ function timelines(cb, id, region = 'NA1') {
 function gameHistoryByUsername(cb, username, region = 'NA1', params = {}) {
   summoner((err, summonerData) => {
     if(err) { cb(err); } else {
-
-      // console.log('\n\n\nSummoner data: \n', summonerData);
       gameHistory(cb, summonerData.data.accountId, region, params);
     }
   }, username, region);
@@ -65,7 +64,6 @@ function gameHistoryByUsername(cb, username, region = 'NA1', params = {}) {
 function matchDataByUsername(cb, username, region = 'NA1', params = {}) {
   // const games = {};
   gameHistoryByUsername((err, gameHistoryData) => {
-    // console.log('gameHistory Data: ', gameHistoryData);
     if (err) {
       console.error(err);
     } else {

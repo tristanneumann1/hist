@@ -25510,7 +25510,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function findParticipantAndTeam(game, player) {
   for (var i = 0; i < game.participantIdentities.length; i++) {
     if (game.participantIdentities[i].player.summonerName.toLowerCase() === player) {
-      console.log(game.participantIdentities[i]);
       return {
         participantId: game.participantIdentities[i].participantId,
         teamId: game.participants[i].teamId
@@ -25567,7 +25566,6 @@ var App = function (_React$Component) {
           player = _state.player,
           games = _state.games;
 
-      console.log('rendering App with state: ', this.state);
       return _react2.default.createElement(
         'div',
         { className: _hist2.default.outerContainer },
@@ -25590,7 +25588,6 @@ var App = function (_React$Component) {
                 participantId = _findParticipantAndTe.participantId,
                 teamId = _findParticipantAndTe.teamId;
 
-            console.log('in map, participant and team: ', participantId, teamId);
             return _react2.default.createElement(_Game2.default, {
               game: game,
               key: game.gameId,
@@ -28261,9 +28258,8 @@ exports.default = Champ;
 /***/ (function(module, exports) {
 
 module.exports = {
-  APIKEY: 'RGAPI-3419bd31-c4d1-4a1f-b93e-2d09bfb326c1',
-  version: '8.19.1',
-};
+    version: '8.22.1',
+}
 
 
 /***/ }),

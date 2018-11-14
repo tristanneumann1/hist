@@ -5,9 +5,7 @@ const { version } = require('../Riot/config.js');
 
 Summs.find({}, 'image', (err, champsData) => {
   if (err) { console.error(err); } else {
-    console.log('champData: ', champsData[0]);
     champsData.forEach((summData) => {
-      console.log('image?: ', summData.image.full);
       const file = fs.createWriteStream(`./client/dist/images/summoners/${summData.image.full}`);
       axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${summData.image.full}`, {responseType: 'stream'})
         .then((pic) => {

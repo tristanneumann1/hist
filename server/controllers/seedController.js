@@ -71,7 +71,6 @@ module.exports = {
       if (err) {
         res.status(500).send(err);
       } else {
-        console.log('icon: ', icon);
         const nameArr = icon.icon.split('/');
         const name = nameArr[nameArr.length - 1];
         res.status(200).send(name);

@@ -5,9 +5,7 @@ const { version } = require('../Riot/config.js');
 
 Items.find({}, 'image', (err, itemsData) => {
   if (err) { console.error(err); } else {
-    console.log('itemData: ', itemsData[0]);
     itemsData.forEach((itemData) => {
-      // console.log('image?: ', itemData.image.full);
       const file = fs.createWriteStream(`./client/dist/images/items/${itemData.image.full}`);
       axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${itemData.image.full}`, { responseType: 'stream' })
         .then((pic) => {

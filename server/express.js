@@ -15,6 +15,5 @@ app.use('/api', router);
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
-// app.use('/api/stats', router);
 
 module.exports = app;

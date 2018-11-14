@@ -11,6 +11,5 @@ const seedItems = (ItemModel, cb) => {
     ItemModel.insertMany(itemModels, cb);
   }).catch(err => console.error(err));
 };
-// seedItems(null, ()=>{console.log('done')});
 
 module.exports = seedItems;
