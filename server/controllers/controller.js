@@ -1,9 +1,5 @@
 const { matchDataByUsername } = require('../../Riot/helpers.js');
 
-const Champions = require('../../db/models/Champions.js');
-const Runes = require('../../db/models/Runes.js');
-const Summs = require('../../db/models/Summoners.js');
-
 module.exports = {
   getGames(req, res) {
     const {
