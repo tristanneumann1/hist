@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -109,15 +109,12 @@ var _HomeTemp = __webpack_require__(56);
 
 var _HomeTemp2 = _interopRequireDefault(_HomeTemp);
 
-var _App = __webpack_require__(57);
+var _App = __webpack_require__(58);
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//BrowserRouter, 
-
-// import { Router } from 'react-router'; //browserHistory
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouterDom.Router,
   { history: _history2.default },
@@ -25404,9 +25401,9 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _history = __webpack_require__(12);
+var _Search = __webpack_require__(57);
 
-var _history2 = _interopRequireDefault(_history);
+var _Search2 = _interopRequireDefault(_Search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25426,14 +25423,6 @@ var HomeTemp = function (_React$Component) {
   }
 
   _createClass(HomeTemp, [{
-    key: 'handleSubmit',
-    value: function handleSubmit(event) {
-      event.preventDefault();
-      var userName = event.target.elements[0].value;
-      var path = '/username/' + userName;
-      _history2.default.push(path);
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -25444,17 +25433,7 @@ var HomeTemp = function (_React$Component) {
           null,
           ' Home Page '
         ),
-        _react2.default.createElement(
-          'form',
-          { onSubmit: this.handleSubmit },
-          _react2.default.createElement('input', { type: 'text', placeholder: 'userName' }),
-          ' ',
-          _react2.default.createElement(
-            'button',
-            { type: 'submit' },
-            'Go'
-          )
-        )
+        _react2.default.createElement(_Search2.default, null)
       );
     }
   }]);
@@ -25481,21 +25460,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(58);
-
-var _axios2 = _interopRequireDefault(_axios);
-
 var _history = __webpack_require__(12);
 
 var _history2 = _interopRequireDefault(_history);
 
-var _hist = __webpack_require__(85);
+var _search = __webpack_require__(104);
 
-var _hist2 = _interopRequireDefault(_hist);
-
-var _Game = __webpack_require__(90);
-
-var _Game2 = _interopRequireDefault(_Game);
+var _search2 = _interopRequireDefault(_search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25505,7 +25476,84 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// this.props.params.username;
+var Search = function (_React$Component) {
+  _inherits(Search, _React$Component);
+
+  function Search() {
+    _classCallCheck(this, Search);
+
+    return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).apply(this, arguments));
+  }
+
+  _createClass(Search, [{
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var userName = event.target.elements[0].value;
+      var path = '/username/' + userName;
+      _history2.default.push(path);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'form',
+        { onSubmit: this.handleSubmit },
+        _react2.default.createElement('input', { type: 'text', placeholder: 'userName', className: _search2.default.input }),
+        ' ',
+        _react2.default.createElement(
+          'button',
+          { type: 'submit', className: _search2.default.GGButton },
+          'GG!'
+        )
+      );
+    }
+  }]);
+
+  return Search;
+}(_react2.default.Component);
+
+exports.default = Search;
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(59);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _hist = __webpack_require__(86);
+
+var _hist2 = _interopRequireDefault(_hist);
+
+var _Game = __webpack_require__(91);
+
+var _Game2 = _interopRequireDefault(_Game);
+
+var _Search = __webpack_require__(57);
+
+var _Search2 = _interopRequireDefault(_Search);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function findParticipantAndTeam(game, player) {
   for (var i = 0; i < game.participantIdentities.length; i++) {
@@ -25552,14 +25600,6 @@ var App = function (_React$Component) {
       });
     }
   }, {
-    key: 'searchUsername',
-    value: function searchUsername(event) {
-      event.preventDefault();
-      var userName = event.target.elements[0].value;
-      var path = '/username/' + userName;
-      _history2.default.push(path);
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _state = this.state,
@@ -25569,17 +25609,7 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: _hist2.default.outerContainer },
-        _react2.default.createElement(
-          'form',
-          { onSubmit: this.searchUsername },
-          _react2.default.createElement('input', { type: 'text', placeholder: 'userName' }),
-          ' ',
-          _react2.default.createElement(
-            'button',
-            { type: 'submit' },
-            'Go'
-          )
-        ),
+        _react2.default.createElement(_Search2.default, null),
         _react2.default.createElement(
           'div',
           { className: _hist2.default.gamesContainer },
@@ -25607,22 +25637,22 @@ var App = function (_React$Component) {
 exports.default = App;
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(60);
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
-var bind = __webpack_require__(61);
-var Axios = __webpack_require__(63);
-var defaults = __webpack_require__(64);
+var utils = __webpack_require__(61);
+var bind = __webpack_require__(62);
+var Axios = __webpack_require__(64);
+var defaults = __webpack_require__(65);
 
 /**
  * Create an instance of Axios
@@ -25655,15 +25685,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(82);
-axios.CancelToken = __webpack_require__(83);
-axios.isCancel = __webpack_require__(79);
+axios.Cancel = __webpack_require__(83);
+axios.CancelToken = __webpack_require__(84);
+axios.isCancel = __webpack_require__(80);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(84);
+axios.spread = __webpack_require__(85);
 
 module.exports = axios;
 
@@ -25672,14 +25702,14 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(61);
-var isBuffer = __webpack_require__(62);
+var bind = __webpack_require__(62);
+var isBuffer = __webpack_require__(63);
 
 /*global toString:true*/
 
@@ -25982,7 +26012,7 @@ module.exports = {
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26000,7 +26030,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 /*!
@@ -26027,16 +26057,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(64);
-var utils = __webpack_require__(60);
-var InterceptorManager = __webpack_require__(76);
-var dispatchRequest = __webpack_require__(77);
+var defaults = __webpack_require__(65);
+var utils = __webpack_require__(61);
+var InterceptorManager = __webpack_require__(77);
+var dispatchRequest = __webpack_require__(78);
 
 /**
  * Create a new instance of Axios
@@ -26113,14 +26143,14 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(60);
-var normalizeHeaderName = __webpack_require__(66);
+var utils = __webpack_require__(61);
+var normalizeHeaderName = __webpack_require__(67);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -26136,10 +26166,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(67);
+    adapter = __webpack_require__(68);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(67);
+    adapter = __webpack_require__(68);
   }
   return adapter;
 }
@@ -26214,10 +26244,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(65)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(66)))
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -26407,13 +26437,13 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -26426,19 +26456,19 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
-var settle = __webpack_require__(68);
-var buildURL = __webpack_require__(71);
-var parseHeaders = __webpack_require__(72);
-var isURLSameOrigin = __webpack_require__(73);
-var createError = __webpack_require__(69);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(74);
+var utils = __webpack_require__(61);
+var settle = __webpack_require__(69);
+var buildURL = __webpack_require__(72);
+var parseHeaders = __webpack_require__(73);
+var isURLSameOrigin = __webpack_require__(74);
+var createError = __webpack_require__(70);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(75);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -26535,7 +26565,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(75);
+      var cookies = __webpack_require__(76);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -26613,13 +26643,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(69);
+var createError = __webpack_require__(70);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -26646,13 +26676,13 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(70);
+var enhanceError = __webpack_require__(71);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -26671,7 +26701,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26699,13 +26729,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -26772,13 +26802,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -26832,13 +26862,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -26907,7 +26937,7 @@ module.exports = (
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26950,13 +26980,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -27010,13 +27040,13 @@ module.exports = (
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -27069,18 +27099,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
-var transformData = __webpack_require__(78);
-var isCancel = __webpack_require__(79);
-var defaults = __webpack_require__(64);
-var isAbsoluteURL = __webpack_require__(80);
-var combineURLs = __webpack_require__(81);
+var utils = __webpack_require__(61);
+var transformData = __webpack_require__(79);
+var isCancel = __webpack_require__(80);
+var defaults = __webpack_require__(65);
+var isAbsoluteURL = __webpack_require__(81);
+var combineURLs = __webpack_require__(82);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -27162,13 +27192,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(60);
+var utils = __webpack_require__(61);
 
 /**
  * Transform the data for a request or a response
@@ -27189,7 +27219,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27201,7 +27231,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27222,7 +27252,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27243,7 +27273,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27269,13 +27299,13 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(82);
+var Cancel = __webpack_require__(83);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -27333,7 +27363,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27367,11 +27397,11 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(86);
+var content = __webpack_require__(87);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -27385,22 +27415,22 @@ var options = {"sourceMap":true,"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(88)(content, options);
+var update = __webpack_require__(89)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(87)(false);
+exports = module.exports = __webpack_require__(88)(false);
 // imports
 
 
 // module
-exports.push([module.i, "html, body {margin:0;padding:0px} /*;height:100%;max-height: 100%} */\r\n\r\nbody {\r\n  background-color: #131350;\r\n}\r\n\r\n.client-src-styles-___hist__outerContainer___1Aj3G {\r\n  display: grid;\r\n  z-index: 1;\r\n  height:100%;\r\n  margin: 20px;\r\n}\r\n\r\n.client-src-styles-___hist__gamesContainer___1UDJr {\r\n  font-family: 'Lato', sans-serif;\r\n}", ""]);
+exports.push([module.i, ".client-src-styles-___hist__outerContainer___1Aj3G {\r\n  display: grid;\r\n  z-index: 1;\r\n  height:100%;\r\n  margin: 20px;\r\n}\r\n\r\n.client-src-styles-___hist__gamesContainer___1UDJr {\r\n  font-family: 'Lato', sans-serif;\r\n}", ""]);
 
 // exports
 exports.locals = {
@@ -27409,7 +27439,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports) {
 
 /*
@@ -27491,7 +27521,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -27560,7 +27590,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(89);
+var	fixUrls = __webpack_require__(90);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -27893,7 +27923,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 
@@ -27988,7 +28018,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28004,31 +28034,31 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
-var _Title = __webpack_require__(93);
+var _Title = __webpack_require__(94);
 
 var _Title2 = _interopRequireDefault(_Title);
 
-var _Champ = __webpack_require__(94);
+var _Champ = __webpack_require__(95);
 
 var _Champ2 = _interopRequireDefault(_Champ);
 
-var _Summoners = __webpack_require__(97);
+var _Summoners = __webpack_require__(98);
 
 var _Summoners2 = _interopRequireDefault(_Summoners);
 
-var _KDA = __webpack_require__(100);
+var _KDA = __webpack_require__(101);
 
 var _KDA2 = _interopRequireDefault(_KDA);
 
-var _Items = __webpack_require__(101);
+var _Items = __webpack_require__(102);
 
 var _Items2 = _interopRequireDefault(_Items);
 
-var _Stats = __webpack_require__(102);
+var _Stats = __webpack_require__(103);
 
 var _Stats2 = _interopRequireDefault(_Stats);
 
@@ -28103,11 +28133,11 @@ var Game = function (_React$Component) {
 exports.default = Game;
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(92);
+var content = __webpack_require__(93);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -28121,17 +28151,17 @@ var options = {"sourceMap":true,"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(88)(content, options);
+var update = __webpack_require__(89)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(87)(false);
+exports = module.exports = __webpack_require__(88)(false);
 // imports
 
 
@@ -28158,7 +28188,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28176,7 +28206,7 @@ var _propTypes = __webpack_require__(28);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
@@ -28207,7 +28237,7 @@ Title.propTypes = {
 exports.default = Title;
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28225,13 +28255,13 @@ var _propTypes = __webpack_require__(28);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
-var _config = __webpack_require__(95);
+var _config = __webpack_require__(96);
 
-var _champions = __webpack_require__(96);
+var _champions = __webpack_require__(97);
 
 var _champions2 = _interopRequireDefault(_champions);
 
@@ -28254,22 +28284,28 @@ Champ.propTypes = {
 exports.default = Champ;
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = {
+<<<<<<< HEAD
     version: '8.22.1',
 }
+=======
+  APIKEY: 'RGAPI-3419bd31-c4d1-4a1f-b93e-2d09bfb326c1',
+  version: '8.22.1',
+};
+>>>>>>> 70fdace16570de623cd6f6ccaf21a3c9bc26d9d4
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module) {
 
 module.exports = {"1":"Annie.png","2":"Olaf.png","3":"Galio.png","4":"TwistedFate.png","5":"XinZhao.png","6":"Urgot.png","7":"Leblanc.png","8":"Vladimir.png","9":"Fiddlesticks.png","10":"Kayle.png","11":"MasterYi.png","12":"Alistar.png","13":"Ryze.png","14":"Sion.png","15":"Sivir.png","16":"Soraka.png","17":"Teemo.png","18":"Tristana.png","19":"Warwick.png","20":"Nunu.png","21":"MissFortune.png","22":"Ashe.png","23":"Tryndamere.png","24":"Jax.png","25":"Morgana.png","26":"Zilean.png","27":"Singed.png","28":"Evelynn.png","29":"Twitch.png","30":"Karthus.png","31":"Chogath.png","32":"Amumu.png","33":"Rammus.png","34":"Anivia.png","35":"Shaco.png","36":"DrMundo.png","37":"Sona.png","38":"Kassadin.png","39":"Irelia.png","40":"Janna.png","41":"Gangplank.png","42":"Corki.png","43":"Karma.png","44":"Taric.png","45":"Veigar.png","48":"Trundle.png","50":"Swain.png","51":"Caitlyn.png","53":"Blitzcrank.png","54":"Malphite.png","55":"Katarina.png","56":"Nocturne.png","57":"Maokai.png","58":"Renekton.png","59":"JarvanIV.png","60":"Elise.png","61":"Orianna.png","62":"MonkeyKing.png","63":"Brand.png","64":"LeeSin.png","67":"Vayne.png","68":"Rumble.png","69":"Cassiopeia.png","72":"Skarner.png","74":"Heimerdinger.png","75":"Nasus.png","76":"Nidalee.png","77":"Udyr.png","78":"Poppy.png","79":"Gragas.png","80":"Pantheon.png","81":"Ezreal.png","82":"Mordekaiser.png","83":"Yorick.png","84":"Akali.png","85":"Kennen.png","86":"Garen.png","89":"Leona.png","90":"Malzahar.png","91":"Talon.png","92":"Riven.png","96":"KogMaw.png","98":"Shen.png","99":"Lux.png","101":"Xerath.png","102":"Shyvana.png","103":"Ahri.png","104":"Graves.png","105":"Fizz.png","106":"Volibear.png","107":"Rengar.png","110":"Varus.png","111":"Nautilus.png","112":"Viktor.png","113":"Sejuani.png","114":"Fiora.png","115":"Ziggs.png","117":"Lulu.png","119":"Draven.png","120":"Hecarim.png","121":"Khazix.png","122":"Darius.png","126":"Jayce.png","127":"Lissandra.png","131":"Diana.png","133":"Quinn.png","134":"Syndra.png","136":"AurelionSol.png","141":"Kayn.png","142":"Zoe.png","143":"Zyra.png","145":"Kaisa.png","150":"Gnar.png","154":"Zac.png","157":"Yasuo.png","161":"Velkoz.png","163":"Taliyah.png","164":"Camille.png","201":"Braum.png","202":"Jhin.png","203":"Kindred.png","222":"Jinx.png","223":"TahmKench.png","236":"Lucian.png","238":"Zed.png","240":"Kled.png","245":"Ekko.png","254":"Vi.png","266":"Aatrox.png","267":"Nami.png","268":"Azir.png","412":"Thresh.png","420":"Illaoi.png","421":"RekSai.png","427":"Ivern.png","429":"Kalista.png","432":"Bard.png","497":"Rakan.png","498":"Xayah.png","516":"Ornn.png","555":"Pyke.png"};
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28287,19 +28323,19 @@ var _propTypes = __webpack_require__(28);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
-var _runes = __webpack_require__(98);
+var _runes = __webpack_require__(99);
 
 var _runes2 = _interopRequireDefault(_runes);
 
-var _summoners = __webpack_require__(99);
+var _summoners = __webpack_require__(100);
 
 var _summoners2 = _interopRequireDefault(_summoners);
 
-var _config = __webpack_require__(95);
+var _config = __webpack_require__(96);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28330,19 +28366,19 @@ Summoners.propTypes = {
 exports.default = Summoners;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module) {
 
 module.exports = {"8000":{"icon":"perk-images/Styles/7201_Precision.png"},"8005":{"icon":"perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png"},"8008":{"icon":"perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png"},"8009":{"icon":"perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png"},"8010":{"icon":"perk-images/Styles/Precision/Conqueror/Conqueror.png"},"8014":{"icon":"perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png"},"8017":{"icon":"perk-images/Styles/Precision/CutDown/CutDown.png"},"8021":{"icon":"perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png"},"8100":{"icon":"perk-images/Styles/7200_Domination.png"},"8105":{"icon":"perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png"},"8106":{"icon":"perk-images/Styles/Domination/UltimateHunter/UltimateHunter.png"},"8112":{"icon":"perk-images/Styles/Domination/Electrocute/Electrocute.png"},"8120":{"icon":"perk-images/Styles/Domination/GhostPoro/GhostPoro.png"},"8124":{"icon":"perk-images/Styles/Domination/Predator/Predator.png"},"8126":{"icon":"perk-images/Styles/Domination/CheapShot/CheapShot.png"},"8128":{"icon":"perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png"},"8134":{"icon":"perk-images/Styles/Domination/IngeniousHunter/IngeniousHunter.png"},"8135":{"icon":"perk-images/Styles/Domination/RavenousHunter/RavenousHunter.png"},"8136":{"icon":"perk-images/Styles/Domination/ZombieWard/ZombieWard.png"},"8138":{"icon":"perk-images/Styles/Domination/EyeballCollection/EyeballCollection.png"},"8139":{"icon":"perk-images/Styles/Domination/TasteOfBlood/GreenTerror_TasteOfBlood.png"},"8143":{"icon":"perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png"},"8200":{"icon":"perk-images/Styles/7202_Sorcery.png"},"8210":{"icon":"perk-images/Styles/Sorcery/Transcendence/Transcendence.png"},"8214":{"icon":"perk-images/Styles/Sorcery/SummonAery/SummonAery.png"},"8224":{"icon":"perk-images/Styles/Sorcery/NullifyingOrb/Pokeshield.png"},"8226":{"icon":"perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png"},"8229":{"icon":"perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png"},"8230":{"icon":"perk-images/Styles/Sorcery/PhaseRush/PhaseRush.png"},"8232":{"icon":"perk-images/Styles/Sorcery/Waterwalking/Waterwalking.png"},"8233":{"icon":"perk-images/Styles/Sorcery/AbsoluteFocus/AbsoluteFocus.png"},"8234":{"icon":"perk-images/Styles/Sorcery/Celerity/CelerityTemp.png"},"8236":{"icon":"perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png"},"8237":{"icon":"perk-images/Styles/Sorcery/Scorch/Scorch.png"},"8242":{"icon":"perk-images/Styles/Sorcery/Unflinching/Unflinching.png"},"8275":{"icon":"perk-images/Styles/Sorcery/NimbusCloak/6361.png"},"8299":{"icon":"perk-images/Styles/Sorcery/LastStand/LastStand.png"},"8300":{"icon":"perk-images/Styles/7203_Whimsy.png"},"8304":{"icon":"perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png"},"8306":{"icon":"perk-images/Styles/Inspiration/HextechFlashtraption/HextechFlashtraption.png"},"8313":{"icon":"perk-images/Styles/Inspiration/PerfectTiming/PerfectTiming.png"},"8316":{"icon":"perk-images/Styles/Inspiration/MinionDematerializer/MinionDematerializer.png"},"8321":{"icon":"perk-images/Styles/Inspiration/FuturesMarket/FuturesMarket.png"},"8345":{"icon":"perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png"},"8347":{"icon":"perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png"},"8351":{"icon":"perk-images/Styles/Inspiration/GlacialAugment/GlacialAugment.png"},"8352":{"icon":"perk-images/Styles/Inspiration/TimeWarpTonic/TimeWarpTonic.png"},"8359":{"icon":"perk-images/Styles/Inspiration/Kleptomancy/Kleptomancy.png"},"8360":{"icon":"perk-images/Styles/Inspiration/UnsealedSpellbook/UnsealedSpellbook.png"},"8400":{"icon":"perk-images/Styles/7204_Resolve.png"},"8410":{"icon":"perk-images/Styles/Resolve/ApproachVelocity/ApproachVelocity.png"},"8429":{"icon":"perk-images/Styles/Resolve/Conditioning/Conditioning.png"},"8437":{"icon":"perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png"},"8439":{"icon":"perk-images/Styles/Resolve/VeteranAftershock/VeteranAftershock.png"},"8444":{"icon":"perk-images/Styles/Resolve/SecondWind/SecondWind.png"},"8446":{"icon":"perk-images/Styles/Resolve/Demolish/Demolish.png"},"8451":{"icon":"perk-images/Styles/Resolve/Overgrowth/Overgrowth.png"},"8453":{"icon":"perk-images/Styles/Resolve/Revitalize/Revitalize.png"},"8463":{"icon":"perk-images/Styles/Resolve/FontOfLife/FontOfLife.png"},"8465":{"icon":"perk-images/Styles/Resolve/Guardian/Guardian.png"},"8472":{"icon":"perk-images/Styles/Resolve/Chrysalis/Chrysalis.png"},"8473":{"icon":"perk-images/Styles/Resolve/BonePlating/BonePlating.png"},"9101":{"icon":"perk-images/Styles/Precision/Overheal.png"},"9103":{"icon":"perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png"},"9104":{"icon":"perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png"},"9105":{"icon":"perk-images/Styles/Precision/LegendTenacity/LegendTenacity.png"},"9111":{"icon":"perk-images/Styles/Precision/Triumph.png"},"9923":{"icon":"perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png"}};
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module) {
 
 module.exports = {"1":{"image":{"full":"SummonerBoost.png","sprite":"spell0.png","group":"spell","x":48,"y":0,"w":48,"h":48}},"3":{"image":{"full":"SummonerExhaust.png","sprite":"spell0.png","group":"spell","x":240,"y":0,"w":48,"h":48}},"4":{"image":{"full":"SummonerFlash.png","sprite":"spell0.png","group":"spell","x":288,"y":0,"w":48,"h":48}},"6":{"image":{"full":"SummonerHaste.png","sprite":"spell0.png","group":"spell","x":336,"y":0,"w":48,"h":48}},"7":{"image":{"full":"SummonerHeal.png","sprite":"spell0.png","group":"spell","x":384,"y":0,"w":48,"h":48}},"11":{"image":{"full":"SummonerSmite.png","sprite":"spell0.png","group":"spell","x":336,"y":48,"w":48,"h":48}},"12":{"image":{"full":"SummonerTeleport.png","sprite":"spell0.png","group":"spell","x":0,"y":96,"w":48,"h":48}},"13":{"image":{"full":"SummonerMana.png","sprite":"spell0.png","group":"spell","x":432,"y":0,"w":48,"h":48}},"14":{"image":{"full":"SummonerDot.png","sprite":"spell0.png","group":"spell","x":192,"y":0,"w":48,"h":48}},"21":{"image":{"full":"SummonerBarrier.png","sprite":"spell0.png","group":"spell","x":0,"y":0,"w":48,"h":48}},"30":{"image":{"full":"SummonerPoroRecall.png","sprite":"spell0.png","group":"spell","x":144,"y":48,"w":48,"h":48}},"31":{"image":{"full":"SummonerPoroThrow.png","sprite":"spell0.png","group":"spell","x":192,"y":48,"w":48,"h":48}},"32":{"image":{"full":"SummonerSnowball.png","sprite":"spell0.png","group":"spell","x":432,"y":48,"w":48,"h":48}},"33":{"image":{"full":"SummonerSiegeChampSelect1.png","sprite":"spell0.png","group":"spell","x":240,"y":48,"w":48,"h":48}},"34":{"image":{"full":"SummonerSiegeChampSelect2.png","sprite":"spell0.png","group":"spell","x":288,"y":48,"w":48,"h":48}},"35":{"image":{"full":"SummonerDarkStarChampSelect1.png","sprite":"spell0.png","group":"spell","x":96,"y":0,"w":48,"h":48}},"36":{"image":{"full":"SummonerDarkStarChampSelect2.png","sprite":"spell0.png","group":"spell","x":144,"y":0,"w":48,"h":48}},"39":{"image":{"full":"SummonerSnowURFSnowball_Mark.png","sprite":"spell0.png","group":"spell","x":384,"y":48,"w":48,"h":48}},"50":{"image":{"full":"SummonerOdysseyRevive.png","sprite":"spell0.png","group":"spell","x":96,"y":48,"w":48,"h":48}},"51":{"image":{"full":"SummonerOdysseyGhost.png","sprite":"spell0.png","group":"spell","x":48,"y":48,"w":48,"h":48}},"52":{"image":{"full":"SummonerOdysseyFlash.png","sprite":"spell0.png","group":"spell","x":0,"y":48,"w":48,"h":48}}};
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28356,7 +28392,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
@@ -28408,7 +28444,7 @@ var KDA = function KDA(props) {
 exports.default = KDA;
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28422,11 +28458,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
-var _config = __webpack_require__(95);
+var _config = __webpack_require__(96);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28449,7 +28485,7 @@ var Items = function Items(props) {
 exports.default = Items;
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28463,7 +28499,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _game = __webpack_require__(91);
+var _game = __webpack_require__(92);
 
 var _game2 = _interopRequireDefault(_game);
 
@@ -28498,6 +28534,47 @@ var Stats = function Stats(props) {
 };
 
 exports.default = Stats;
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(105);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"sourceMap":true,"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(89)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(88)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".client-src-styles-___search__GGButton___2CbU7 {\r\n    position: relative;\r\n    top: 3px;\r\n    left: 3px;\r\n    cursor: pointer;\r\n    border: 0;\r\n    height: 40px;\r\n    width: 100px;\r\n    background: rgb(2,0,36);\r\n    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);\r\n    color: #efefef;\r\n    font-weight: 900;\r\n    font-size: 20px;\r\n    -webkit-box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n    -moz-box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n    box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n}\r\n\r\n.client-src-styles-___search__GGButton___2CbU7:hover {\r\n    top: 0px;\r\n    left: 0px;\r\n    box-shadow: 5px 5px 7px 3px rgba(0,0,0,0.75);\r\n    transition: 0.5s;\r\n}\r\n\r\n.client-src-styles-___search__GGButton___2CbU7:active {\r\n    top: 3px;\r\n    left: 3px;\r\n    box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.75);\r\n    transition: 0.1s;\r\n}\r\n", ""]);
+
+// exports
+exports.locals = {
+	"GGButton": "client-src-styles-___search__GGButton___2CbU7"
+};
 
 /***/ })
 /******/ ]);

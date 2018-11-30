@@ -1,3 +1,9 @@
 /node_modules
+<<<<<<< HEAD
 /client/dist/bundle.js
 .env
+=======
+/Riot/config.js
+/client/dist/bundle.js
+client/dist/bundle.js
+>>>>>>> 70fdace16570de623cd6f6ccaf21a3c9bc26d9d4
