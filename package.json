@@ -23,11 +23,8 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "css-loader": "^1.0.0",
-<<<<<<< HEAD
     "dotenv": "^6.1.0",
-=======
     "eslint-plugin-react": "^7.11.1",
->>>>>>> 70fdace16570de623cd6f6ccaf21a3c9bc26d9d4
     "express": "^4.16.3",
     "helmet": "^3.13.0",
     "mongoose": "^5.2.17",
